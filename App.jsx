@@ -394,43 +394,52 @@ export default function App() {
 
   /* Fonts + animations + XLSX */
   useEffect(() => {
-    const link = document.createElement("link");
-    link.rel  = "stylesheet";
-    link.href = "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap";
-    document.head.appendChild(link);
+    // Add Google Fonts link
+    if (!document.getElementById("fpc-fonts")) {
+      const link = document.createElement("link");
+      link.id   = "fpc-fonts";
+      link.rel  = "stylesheet";
+      link.href = "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap";
+      document.head.appendChild(link);
+    }
 
-    const xlsxScript = document.createElement("script");
-    xlsxScript.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";
-    xlsxScript.async = true;
-    document.head.appendChild(xlsxScript);
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-      @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-      @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-      @keyframes orb1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.1)}}
-      @keyframes orb2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,40px) scale(0.9)}}
-      @keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
-      @keyframes pulse{0%,100%{opacity:0.5}50%{opacity:1}}
-      .fu1{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .1s both}
-      .fu2{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .22s both}
-      .fu3{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .34s both}
-      .fu4{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .46s both}
-      .fu5{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .58s both}
-      .fi{animation:fadeIn 1s ease .1s both}
-      .hov-card:hover{transform:translateY(-3px);border-color:rgba(245,158,11,0.35)!important;transition:all .2s ease!important}
-      .hov-feat:hover{transform:translateY(-2px);background:rgba(255,255,255,0.04)!important;transition:all .2s ease!important}
-      .hov-cta:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(245,158,11,0.5)!important;transition:all .18s ease!important}
-      .hov-drop:hover{border-color:rgba(245,158,11,0.6)!important;background:rgba(245,158,11,0.04)!important}
-      .fpc-input:focus{border-color:rgba(245,158,11,0.5)!important;outline:none!important}
-      *{box-sizing:border-box}
-    `;
-    document.head.appendChild(style);
-    return () => {
-      document.head.removeChild(link);
-      document.head.removeChild(xlsxScript);
-      document.head.removeChild(style);
-    };
+    // Add XLSX script
+    if (!document.getElementById("fpc-xlsx")) {
+      const script  = document.createElement("script");
+      script.id     = "fpc-xlsx";
+      script.src    = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";
+      script.async  = true;
+      document.head.appendChild(script);
+    }
+
+    // Add CSS animations
+    if (!document.getElementById("fpc-styles")) {
+      const style = document.createElement("style");
+      style.id    = "fpc-styles";
+      style.textContent = `
+        @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+        @keyframes orb1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.1)}}
+        @keyframes orb2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,40px) scale(0.9)}}
+        @keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+        @keyframes pulse{0%,100%{opacity:0.5}50%{opacity:1}}
+        .fu1{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .1s both}
+        .fu2{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .22s both}
+        .fu3{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .34s both}
+        .fu4{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .46s both}
+        .fu5{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .58s both}
+        .fi{animation:fadeIn 1s ease .1s both}
+        .hov-card:hover{transform:translateY(-3px);border-color:rgba(245,158,11,0.35)!important;transition:all .2s ease!important}
+        .hov-feat:hover{transform:translateY(-2px);background:rgba(255,255,255,0.04)!important;transition:all .2s ease!important}
+        .hov-cta:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(245,158,11,0.5)!important;transition:all .18s ease!important}
+        .hov-drop:hover{border-color:rgba(245,158,11,0.6)!important;background:rgba(245,158,11,0.04)!important}
+        .fpc-input:focus{border-color:rgba(245,158,11,0.5)!important;outline:none!important}
+        *{box-sizing:border-box}
+      `;
+      document.head.appendChild(style);
+    }
+    // No cleanup — these are permanent global styles, safe to leave in DOM
   }, []);
 
   /* File loader — handles CSV and XLSX */
