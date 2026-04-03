@@ -435,7 +435,8 @@ export default function App() {
         .hov-cta:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(245,158,11,0.5)!important;transition:all .18s ease!important}
         .hov-drop:hover{border-color:rgba(245,158,11,0.6)!important;background:rgba(245,158,11,0.04)!important}
         .fpc-input:focus{border-color:rgba(245,158,11,0.5)!important;outline:none!important}
-        *{box-sizing:border-box}
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{width:100%;min-height:100%;background:${C.bg}}
       `;
       document.head.appendChild(style);
     }
