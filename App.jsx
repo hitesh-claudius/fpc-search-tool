@@ -630,7 +630,7 @@ export default function App() {
       <nav className="fu1" style={{ position: "relative", zIndex: 10, padding: "16px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid rgba(245,158,11,0.1)", backdropFilter: "blur(12px)", background: "rgba(5,13,26,0.6)" }}>
         <div>
           <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.04em" }}>First Page Consultants</div>
-          <div style={{ fontSize: 9, color: C.textSec, letterSpacing: "0.15em", textTransform: "uppercase" }}>Amazon Advertising · Since 2013</div>
+          <div style={{ fontSize: 9, color: C.textSec, letterSpacing: "0.15em", textTransform: "uppercase" }}>Amazon Advertising · Since 2016</div>
         </div>
         <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
           <a href="https://www.firstpageconsultants.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: C.textSec, textDecoration: "none" }}>Website ↗</a>
@@ -779,7 +779,7 @@ export default function App() {
         <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 48, alignItems: "center" }}>
           <div>
             <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", color: C.accent, marginBottom: 14 }}>About First Page Consultants</div>
-            <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 36, lineHeight: 1.05, marginBottom: 20 }}>We have been inside Amazon Ads since 2013. This is how we think.</div>
+            <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 36, lineHeight: 1.05, marginBottom: 20 }}>We have been inside Amazon Ads since 2016. This is how we think.</div>
             <p style={{ fontSize: 14, color: C.textSec, lineHeight: 1.85, marginBottom: 14, fontWeight: 300 }}>We built this tool because our team was losing too much time on manual search term analysis before every audit. We automated our own thinking and are sharing it free because better tools make better sellers.</p>
             <p style={{ fontSize: 14, color: C.textSec, lineHeight: 1.85, marginBottom: 28, fontWeight: 300 }}>We manage ad spend across the US, Canada, UK, Europe, and India for 30+ brands. If you want this level of thinking applied to your full account, the first audit is on us.</p>
             <a href="https://www.firstpageconsultants.com" target="_blank" rel="noopener noreferrer" className="hov-cta"
@@ -788,7 +788,7 @@ export default function App() {
             </a>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-            {[["13+","Years on Amazon",C.accent],["5","Global Marketplaces",C.qmarks],["30+","Active Brands",C.cows],["∞","Terms Analyzed",C.stars]].map(([num, label, color]) => (
+            {[["10+","Years on Amazon",C.accent],["5","Global Marketplaces",C.qmarks],["30+","Active Brands",C.cows],["∞","Terms Analyzed",C.stars]].map(([num, label, color]) => (
               <div key={label} style={{ background: "rgba(12,22,40,0.8)", border: `1px solid ${color}22`, borderRadius: 14, padding: "22px 16px", textAlign: "center" }}>
                 <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 44, color, lineHeight: 1, marginBottom: 8 }}>{num}</div>
                 <div style={{ fontSize: 11, color: C.textSec, fontWeight: 600, letterSpacing: "0.04em" }}>{label}</div>
@@ -1016,7 +1016,7 @@ export default function App() {
 
       {/* Dashboard Footer */}
       <div style={{ borderTop: `1px solid ${C.border}`, background: C.surface, padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-        <div style={{ fontSize: 11, color: C.textSec }}><span style={{ color: C.accent, fontWeight: 700 }}>First Page Consultants</span> — Amazon advertising specialists since 2013.</div>
+        <div style={{ fontSize: 11, color: C.textSec }}><span style={{ color: C.accent, fontWeight: 700 }}>First Page Consultants</span> — Amazon advertising specialists since 2016.</div>
         <a href="https://www.firstpageconsultants.com" target="_blank" rel="noopener noreferrer"
           style={{ padding: "8px 20px", background: C.accent, borderRadius: 6, color: "#000", fontWeight: 800, fontSize: 11, textDecoration: "none", letterSpacing: "0.04em" }}>
           Get a Free Account Audit →
