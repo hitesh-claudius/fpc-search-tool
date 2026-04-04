@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    @apply bg-bg text-text font-body antialiased;
+    min-height: 100%;
+    width: 100%;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-accent;
+  }
+}
+
+@layer components {
+  .fpc-input:focus {
+    @apply border-accent/50 outline-none ring-1 ring-accent/20;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 ease-out;
+  }
+  .card-hover:hover {
+    @apply -translate-y-0.5 border-accent/35;
+  }
+
+  .cta-hover {
+    @apply transition-all duration-200 ease-out;
+  }
+  .cta-hover:hover {
+    @apply -translate-y-0.5 shadow-[0_0_40px_rgba(245,158,11,0.5)];
+  }
+
+  .drop-hover {
+    @apply transition-all duration-200 ease-out;
+  }
+  .drop-hover:hover {
+    @apply border-accent/60 bg-accent/[0.04];
+  }
+}
